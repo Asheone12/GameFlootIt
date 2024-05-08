@@ -17,7 +17,7 @@ android {
 
     defaultConfig {
         applicationId "com.muen.gameflootit"
-        minSdk 27
+        minSdk 25
         targetSdk 34
         versionCode 10000
         versionName "1.0.0"

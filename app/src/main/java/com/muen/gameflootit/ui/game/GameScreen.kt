@@ -9,22 +9,14 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.wrapContentHeight
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material.Icon
-import androidx.compose.material.IconButton
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Scaffold
-import androidx.compose.material.Text
-import androidx.compose.material.TopAppBar
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.Settings
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
-import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.muen.gameflootit.R
 import com.muen.gameflootit.R.string
 import com.muen.gameflootit.domain.GameState
 import com.muen.gameflootit.domain.GameState.RUN
@@ -40,30 +32,7 @@ fun GameScreen(
     onRestartButtonClick: () -> Unit,
     onSettingsButtonClick: () -> Unit,
 ) {
-    Scaffold(
-        topBar = {
-            TopAppBar(
-                title = {
-                    Text(
-                        modifier = Modifier.fillMaxWidth(),
-                        textAlign = TextAlign.Center,
-                        text = stringResource(R.string.app_name)
-                    )
-                },
-                contentColor = MaterialTheme.colors.onBackground,
-                backgroundColor = MaterialTheme.colors.background,
-                actions = {
-                    IconButton(onClick = { onSettingsButtonClick.invoke() }) {
-                        Icon(
-                            imageVector = Icons.Filled.Settings,
-                            contentDescription = stringResource(id = string.settings)
-                        )
-                    }
-                },
-                elevation = 0.dp
-            )
-        }
-    ) { padding ->
+    Scaffold { padding ->
         Column(
             modifier = Modifier
                 .fillMaxHeight()
@@ -80,7 +49,7 @@ fun GameScreen(
 
             BoardUi(
                 modifier = Modifier
-                    .weight(weight = 0.6f, fill = true)
+                    .weight(weight = 1.0f, fill = true)
                     .padding(24.dp, 16.dp)
                     .fillMaxWidth()
                     .wrapContentHeight()

@@ -22,7 +22,7 @@ fun TurnsUi(
     Text(
         modifier = modifier,
         textAlign = TextAlign.Center,
-        fontSize = 28.sp,
+        fontSize = 18.sp,
         text = stringResource(id = R.string.turns_ui_turns_label, turn, maxTurns),
     )
 }
