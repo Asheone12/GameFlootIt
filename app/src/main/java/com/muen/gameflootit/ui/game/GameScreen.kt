@@ -41,7 +41,7 @@ fun GameScreen(
         ) {
             TurnsUi(
                 modifier = Modifier
-                    .padding(8.dp)
+                    .padding(top = 8.dp)
                     .fillMaxWidth(),
                 turn = turn,
                 maxTurns = maxTurns
@@ -50,7 +50,7 @@ fun GameScreen(
             BoardUi(
                 modifier = Modifier
                     .weight(weight = 1.0f, fill = true)
-                    .padding(24.dp, 16.dp)
+                    .padding(8.dp, 8.dp)
                     .fillMaxWidth()
                     .wrapContentHeight()
                     .background(
@@ -62,7 +62,7 @@ fun GameScreen(
 
             BoxWithConstraints(
                 modifier = Modifier
-                    .weight(weight = 0.4f, fill = true),
+                    .weight(weight = 0.5f, fill = true),
                 contentAlignment = Alignment.Center,
             ) {
                 when (gameState) {
